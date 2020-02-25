@@ -3,8 +3,10 @@
 
 ## Development Lead
 
-* Lesley Miller <iamthelm@gmail.com>
+* Lesley Miller <lesley.miller@alumni.ubc.ca>
 
 ## Contributors
 
-None yet. Why not be the first?
+* Wenjiao Zou
+* Zhang Liang Tan
+* Tejas Phaterpekar
