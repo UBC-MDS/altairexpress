@@ -1,4 +1,6 @@
 
+This document was adapted from the [cookiecutter](https://github.com/audreyr/cookiecutter-pypackage).
+
 ## Contributing
 
 Contributions are welcome, and they are greatly appreciated! Every little bit
