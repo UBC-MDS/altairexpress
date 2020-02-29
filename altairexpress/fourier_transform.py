@@ -9,7 +9,7 @@ def fourier_transform(data, time_col, data_col):
 
     Parameters
     ----------
-    data: dataframe
+    data: pandas.DataFrame
         pandas dataframe containing all neccessary information
     time_col: str
         string containing the time data column corresponding to the data we
