@@ -11,18 +11,18 @@ def fourier_transform(data, time_col, data_col):
     Parameters
     ----------
     data: pandas.DataFrame
-        pandas dataframe containing all neccessary information
+        pandas dataframe containing all neccessary information.
     time_col: str
         string containing the time data column corresponding to the data we
-        want to apply fourier transform to
+        want to apply fourier transform to.
     data_col: str
-        string containing the name of the column we want to apply fourier transform to
+        string containing the name of the column we want to apply fourier transform to.
 
 
     Returns
     -------
     altair plot
-        altair plot of frequency vs amplitude of the data inputed
+        altair plot of frequency vs amplitude of the data inputed.
 
 
     Examples
