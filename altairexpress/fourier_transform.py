@@ -30,5 +30,4 @@ def fourier_transform(data, time_col, data_col):
     >>> altairexpress.fourier_transform(data = my_data,
                                         time_col = 'time_series',
                                         data_col = 'signal')
-
     '''
