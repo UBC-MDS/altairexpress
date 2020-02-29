@@ -31,3 +31,4 @@ def fourier_transform(data, time_col, data_col):
                                         time_col = 'time_series',
                                         data_col = 'signal')
     '''
+    print('no compilation error!')
