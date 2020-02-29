@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import altair as alt
 
+
 def fourier_transform(data, time_col, data_col):
     '''
     Creates fourier transform plot of the data specified in the 'time_col' column
