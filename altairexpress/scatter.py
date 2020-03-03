@@ -1,5 +1,7 @@
 import altair as alt
 import numpy as np
+import pandas as pd
+import warnings
 
 
 def make_scatter(df, xval = None, yval = None, x_transform = False, y_transform = False):
@@ -32,12 +34,18 @@ def make_scatter(df, xval = None, yval = None, x_transform = False, y_transform 
     
 
 
-
-    if x_transform == "log":
+    if x_transform == True:
+        if any(df[xval] < 0):
+            warnings.warn("You have negative values in your x variable, which is incompatible with np.log.")
         df[xval] = np.log(df[xval])
 
-    if y_transform == "log":
+            
+
+    if y_transform == True:
+        if any(df[yval] < 0):
+            warnings.warn("You have negative values in your y variable, which is incompatible with np.log.")
         df[yval] = np.log(df[yval])
+    
     
     x_scale = alt.Scale(domain = (float(df[xval].min()), float(df[xval].max())))
     y_scale = alt.Scale(domain = (float(df[yval].min()), float(df[yval].max())))
