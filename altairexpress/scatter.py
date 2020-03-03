@@ -16,6 +16,21 @@ def make_scatter(df, xval = None, yval = None, x_transform = False, y_transform 
     y_logtransform - (Boolean) determines whether a natural log transformation occurs on the y-axis
     '''
 
+   
+    # Type Checks
+    assert isinstance(df, pd.DataFrame), "TypeError: Data must be entered as a pandas dataframe."
+    assert isinstance(xval, str), "Wrong type! X-axis variable must be entered and be of type String."
+    assert isinstance(yval, str), "Wrong type! X-axis variable must be entered and be of type String."
+    assert isinstance(x_transform, bool), "TypeError: x_transform must be of type boolean."
+    assert isinstance(y_transform, bool), "TypeError: y_transform must be of type boolean."
+    
+    if xval not in df.columns:
+        raise Exception("Variable name not found in input dataframe. Double-check spelling!")
+    
+    assert pd.api.types.is_numeric_dtype(df[xval]), "Your x-variable needs to be numeric. Double-check dtype and coerce to numeric if necessary."
+    assert pd.api.types.is_numeric_dtype(df[yval]), "Your y-variable needs to be numeric. Double-check dtype and coerce to numeric if necessary."  
+    
+
 
 
     if x_transform == "log":
