@@ -17,3 +17,5 @@ def test_scatter(test_df):
     return (print("nothing yet"))
 
 #assert whether an error is raised or not.
+#dir()
+#check for quantitative variables
