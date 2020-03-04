@@ -4,20 +4,20 @@ import pandas as pd
 import warnings
 
 
-def make_scatter(df, xval = None, yval = None, x_transform = False, y_transform = False):
+def make_scatter(data, xval = None, yval = None, x_transform = False, y_transform = False):
     '''
     Takes in a dataframe and creates a scatterplot that compares two numerical features/variables that are specified by the user.
     Additionally, the user can toggle natural log transformations on both the x and y axis.
 
     Arguements:
 
-    df - (dataframe) Dataframe 
+    data - (dataframe) Dataframe 
     xval - (String) variable/column name 
     yval - (String) variable/column name
     x_logtransform - (Boolean) determines whether a natural log transformation occurs on the x-axis
     y_logtransform - (Boolean) determines whether a natural log transformation occurs on the y-axis
     '''
-
+    df = data.copy(deep = True)
    
     # Type Checks
     assert isinstance(df, pd.DataFrame), "TypeError: Data must be entered as a pandas dataframe."
