@@ -12,18 +12,17 @@ def test_df():
 
 def test_scatter(test_df):
 
-    # check axis; are the variables numeric
-    # check axis of the plot itself
-    # check the mark
+
     # example 1
     plot = sc.make_scatter(test_df, xval = "Horsepower", yval = "Acceleration")
     plot_dict = plot.to_dict()
 
+    # make sure the right marks are used in altair
     assert plot_dict['vconcat'][0]['mark']['type'] == "bar"
     assert plot_dict['vconcat'][1]['hconcat'][0]['mark']['type'] == "circle"
     assert plot_dict['vconcat'][1]['hconcat'][1]['mark']['type'] == "bar"
 
-
+    # ensure all variables are quantitative
     assert plot_dict['vconcat'][0]['encoding']['x']['type'] == "quantitative"
     assert plot_dict['vconcat'][0]['encoding']['y']['type'] == "quantitative"
     assert plot_dict['vconcat'][1]['hconcat'][0]['encoding']['x']['type'] == "quantitative"
@@ -35,6 +34,7 @@ def test_scatter(test_df):
     plot_two = sc.make_scatter(test_df, xval = "Displacement", yval = "Weight_in_lbs", x_transform = True, y_transform = True)
     plot_dict = plot_two.to_dict()
 
+    # ensure proper domains are being established after transforming the data.
     assert np.log(test_df['Displacement']).min() == plot_dict['vconcat'][1]['hconcat'][0]['encoding']['x']['scale']['domain'][0]
     assert np.log(test_df['Displacement']).max() == plot_dict['vconcat'][1]['hconcat'][0]['encoding']['x']['scale']['domain'][1]
 
