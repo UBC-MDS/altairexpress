@@ -43,7 +43,6 @@ def test_scatter(test_df):
 
     return 
 
-#assert whether an error is raised or not.
-#dir()
-#check for quantitative variables
-
+# def test_name():
+#     with pytest.raises(ValueError):
+#         # code that should return ValueErro
