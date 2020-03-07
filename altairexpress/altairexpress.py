@@ -61,7 +61,7 @@ def ts_alt(data, col, frequency):
 
     # Ensure frequency is annual/quarterly/monthly/weekly
     if (frequency not in [1, 4, 12, 52]):
-        raise Exception("ValueError: Frequency must be annual/quarterly/monthly/weekly.")
+        raise Exception("ValueError: Frequency must be 1/4/12/52.")
     
     # load the data
     df = pd.read_csv(data, index_col=0, parse_dates=True)
