@@ -10,6 +10,11 @@ def test_df():
     test_data = data.cars()
     return test_data
 
+@pytest.fixture
+def test_negative():
+    negative_data = pd.DataFrame({"x":[1,2,6,7,83,-1], "y": [1,25,6,-77,2,3]})
+    return negative_data
+
 def test_scatter(test_df):
 
 
@@ -43,6 +48,15 @@ def test_scatter(test_df):
 
     return 
 
-# def test_name():
-#     with pytest.raises(ValueError):
-#         # code that should return ValueErro
+# Test all errors and warning branches
+def test_errors(test_df):
+    with pytest.raises(ValueError):
+        sc.make_scatter(test_df, xval = "Horse", yval = "Acceleration")
+
+def test_negX(test_negative):
+    with pytest.warns(UserWarning):
+        sc.make_scatter(test_negative, xval = "x", yval = "y", x_transform = True)
+
+def test_negY(test_negative):
+    with pytest.warns(UserWarning):
+        sc.make_scatter(test_negative, xval = "x", yval = "y", y_transform = True)

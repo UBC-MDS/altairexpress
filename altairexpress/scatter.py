@@ -29,7 +29,7 @@ def make_scatter(data, xval = None, yval = None, x_transform = False, y_transfor
     
     # Ensure variable exists in the dataframe
     if xval not in df.columns or yval not in df.columns:
-        raise Exception("Variable name not found in input dataframe. Double-check spelling!")
+        raise ValueError("Variable name not found in input dataframe. Double-check spelling!")
     
     # Ensure variable is numeric
     assert pd.api.types.is_numeric_dtype(df[xval]), "Your x-variable needs to be numeric. Double-check dtype and coerce to numeric if necessary."
