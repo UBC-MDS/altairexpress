@@ -30,7 +30,8 @@ def hist(data, variable):
 def ts_alt(data, col, frequency):
     """
     Convert csv file into a time series object, decompose it into in trend, seasonality/cyclicity
-    and noise/remainder/error and plot the raw data and the decomposed components.
+    and noise/remainder/error and plot the raw data and the decomposed components. If the time series 
+    can't be decomposed, the function will just return the line chart of the raw data.  
 
     Parameters
     ----------
@@ -38,8 +39,8 @@ def ts_alt(data, col, frequency):
       the path of the csv file.
     col : str
       the name of the column to be analyzed
-    frequency: int
-      the desired time interval
+    frequency: {1, 4, 12, 52}
+      the freqency of the time series
 
 
 
@@ -57,11 +58,8 @@ def ts_alt(data, col, frequency):
     # Check the variable type of inputs
     assert isinstance(data, str), "TypeError: The path of the data must be entered as a string."
     assert isinstance(col, str), "TypeError: The column name must be entered as a string."
-    assert isinstance(frequency, int), "TypeError: The frequency must be entered as an integer."
-
-    # Ensure frequency is annual/quarterly/monthly/weekly
     if (frequency not in [1, 4, 12, 52]):
-        raise Exception("ValueError: Frequency must be 1/4/12/52.")
+        raise Exception("ValueError: Frequency must be an integer from {1, 4, 12, 52}.")
     
     # load the data
     df = pd.read_csv(data, index_col=0, parse_dates=True)
@@ -71,7 +69,6 @@ def ts_alt(data, col, frequency):
     if col not in df.columns:
         raise Exception("ValueError: The column name were not found in the original data.")
 
-    assert pd.api.types.is_numeric_dtype(df_res[col]), "ValueError: The time series must be numeric. Check the data type of the selected column."
     
     # Plot the raw data and decomposed components
     if frequency == 1:
