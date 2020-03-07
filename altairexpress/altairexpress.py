@@ -54,10 +54,26 @@ def ts_alt(data, col, frequency):
     >>> altairexpress.ts_alt("https://raw.githubusercontent.com/plotly/datasets/master/timeseries.csv", A, 3)
     altair.vegalite.v3.api.Chart
     """
+    # Check the variable type of inputs
+    assert isinstance(data, str), "TypeError: The path of the data must be entered as a string."
+    assert isinstance(col, str), "TypeError: The column name must be entered as a string."
+    assert isinstance(frequency, int), "TypeError: The frequency must be entered as an integer."
+
+    # Ensure frequency is annual/quarterly/monthly/weekly
+    if (frequency not in [1, 4, 12, 52]):
+        raise Exception("ValueError: Frequency must be annual/quarterly/monthly/weekly.")
     
+    # load the data
     df = pd.read_csv(data, index_col=0, parse_dates=True)
     df_res = df.reset_index()
 
+    # Check the input further
+    if col not in df.columns:
+        raise Exception("ValueError: The column name were not found in the original data.")
+
+    assert pd.api.types.is_numeric_dtype(df_res[col]), "ValueError: The time series must be numeric. Check the data type of the selected column."
+    
+    # Plot the raw data and decomposed components
     if frequency == 1:
         plt =  alt.Chart(df_res).mark_line().encode(
             alt.X(df_res.columns[0]),
