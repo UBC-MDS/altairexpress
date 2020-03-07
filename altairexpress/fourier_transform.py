@@ -41,6 +41,7 @@ def fourier_transform(data, time_col, data_col):
     # Loading data
     my_signal = np.array(data[data_col].dropna())
     my_time = np.array(data[time_col].dropna())
+    sampling_freq = my_time[1] - my_time[0]
 
     # Making sure that there are no `NaN` values
     assert((data[data_col] == data[data_col].dropna()).all()), \
@@ -48,7 +49,6 @@ def fourier_transform(data, time_col, data_col):
     assert((data[time_col] == data[time_col].dropna()).all()), \
     '`NaN` values found in time column!'
 
-    sampling_freq = my_time[1] - my_time[0]
     for n in range(len(my_time) - 1):
         assert np.isclose(my_time[n + 1] - my_time[n], sampling_freq), \
         'Sampling time is not uniformly distributed! Assure that time between samples is constant!'
