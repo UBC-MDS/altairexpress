@@ -27,6 +27,16 @@ def hist(data, variable):
     """
     # TODO raise an exception about the type of data. must be pandas dataframe
 
+    # Check if data is dataframe
+    assert isinstance(data, pd.DataFrame), "TypeError: Data must be a pandas dataframe."
+
+    # Check if variable name is a string
+    assert isinstance(variable, str), "Variable must be supplied as a string"
+
+    # Check that variable is continuous numeric data
+    assert pd.api.types.is_numeric_dtype(
+        data[[variable]]), "Variable needs to be numeric. Your data must be have a continuous numeric data type."
+
     # extract the variable
     v = data[variable]
 
