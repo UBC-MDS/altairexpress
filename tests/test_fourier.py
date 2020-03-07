@@ -14,7 +14,7 @@ def test_fourier():
     None
         The test should pass and no asserts should be displayed.
     """
-    #Creating test df
+    #Creating test dataframe objects
     N = 600
     T = 1.0 / 800.0
     x = np.linspace(0.0, N*T, N)
