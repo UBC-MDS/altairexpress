@@ -28,8 +28,8 @@ pip install -i https://test.pypi.org/simple/altairexpress
 
 ### Dependencies
 
-- [Altair](https://altair-viz.github.io)
-- [Numpy](https://numpy.org)
+- [Altair (v3.3.0 or higher)](https://altair-viz.github.io)
+- [Numpy (v1.18.1 or higher)](https://numpy.org)
 
 ### Usage
 
