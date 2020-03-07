@@ -14,7 +14,7 @@ def test_fourier():
     None
         The test should pass and no asserts should be displayed.
     """
-    #Creating test dataframe objects
+    #Creating test DataFrame objects
     N = 600
     T = 1.0 / 800.0
     x = np.linspace(0.0, N*T, N)
@@ -22,6 +22,7 @@ def test_fourier():
     y2 = np.sin(40.0 * 2.0*np.pi*x) + 0.5*np.sin(70.0 * 2.0*np.pi*x)
     my_df1 = pd.DataFrame(data = {'X1': x, 'X2': y1})
     my_df2 = pd.DataFrame(data = {'X1': x, 'X2': y2})
+    
     # Test 1
     assert isinstance(ft.fourier_transform(data = my_df1, time_col = 'X1', data_col = 'X2'), \
     alt.vegalite.v3.api.Chart), "Return type is not an Altair object!"
