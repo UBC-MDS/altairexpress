@@ -45,7 +45,7 @@ def fourier_transform(data, time_col, data_col):
 
     # Making sure that there are no `NaN` values
     assert((data[data_col] == data[data_col].dropna()).all()), \
-    '`NaN` values found in signal column!'
+    '`NaN` values found in signal column! Please Fill!'
     assert((data[time_col] == data[time_col].dropna()).all()), \
     '`NaN` values found in time column!'
 
