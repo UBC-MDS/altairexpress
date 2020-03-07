@@ -62,8 +62,8 @@ def ts_alt(data, col, frequency):
         raise Exception("ValueError: Frequency must be an integer from {1, 4, 12, 52}.")
     
     # load the data
-    df = pd.read_csv(data, index_col=0, parse_dates=True)
-    df_res = df.reset_index()
+    df_res = pd.read_csv(data, index_col=0, parse_dates=True).reset_index()
+   
 
     # Check the input further
     if col not in df.columns:
