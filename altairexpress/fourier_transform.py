@@ -51,7 +51,7 @@ def fourier_transform(data, time_col, data_col):
 
     for n in range(len(my_time) - 1):
         assert np.isclose(my_time[n + 1] - my_time[n], sampling_freq), \
-        'Sampling time is not uniformly distributed! Assure that time between samples is constant!'
+        'Sampling frequency is not uniformly! Assure that time between samples is constant!'
 
     amplitudes = np.fft.rfft(my_signal)
     frequencies = np.fft.rfftfreq(len(my_signal), sampling_freq)
