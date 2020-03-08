@@ -1,10 +1,12 @@
 import pandas as pd
 import altair as alt
+import numpy as np
+
 import statsmodels.tsa.seasonal as sea
 
 def hist(data, variable):
     """
-    Creates a altair histogram indicating the position of the mean and median and displays the standard deviation.
+    Creates a altair histogram indicating the position of the mean and median.
 
     Parameters
     ----------
@@ -16,7 +18,7 @@ def hist(data, variable):
     Returns
     --------
     altair plot
-        Produces an altair histogram with vertical bars for the mean and median and annotates the standard deviation.
+        Produces an altair histogram with vertical bars for the mean and median.
 
     Examples
     --------
@@ -24,7 +26,51 @@ def hist(data, variable):
     >>> gapminder.head()
     >>> altairexpress.hist(gapminder, gdpPerCap)
     """
-    print("hello MDS")
+    # TODO raise an exception about the type of data. must be pandas dataframe
+
+    # Check if data is dataframe
+    assert isinstance(data, pd.DataFrame), "TypeError: Data must be a pandas dataframe."
+
+    # Check if variable name is a string
+    assert isinstance(variable, str), "Variable must be supplied as a string"
+
+    # Check that variable is continuous numeric data
+    assert pd.api.types.is_numeric_dtype(
+        data[[variable]]), "Variable needs to be numeric. Your data must be have a continuous numeric data type."
+
+    # extract the variable
+    v = data[variable]
+
+    # TODO annotate plot with summary stats
+    # get the variable statistics
+    variable_mean = np.mean(v)
+    variable_median = np.median(v)
+
+    # set the x-axis position for annotations
+    #annotation_x = np.max(v) * 0.9
+
+    # TODO get the max frequency from scale of altair plot
+    # get the max frequency
+    # y_max = np.max(v)
+
+    p1 = alt.Chart(data).mark_bar().encode(
+        alt.X(variable),
+        alt.Y('count()', stack=None))
+
+    # Specify the axes
+    mean_string = 'mean(' + variable + '):Q'
+    median_string = 'median(' + variable + '):Q'
+
+
+    mean_line = alt.Chart(data).mark_rule(color='red', size=5).encode(
+        x=alt.X(mean_string))
+
+    median_line = alt.Chart(data).mark_rule(color='blue', size=5).encode(
+        x=alt.X(median_string))
+
+
+
+    return p1 + mean_line + median_line
 
 
 def ts_alt(data, col, frequency):
