@@ -20,16 +20,16 @@ pip install -i https://test.pypi.org/simple/altairexpress
 
 - **Scatter plot:** Here we will take our own spin on 2-d scatter plots. We feel that the it is often the case that we don’t know the distribution of the given points. This is why this function will group the points by each of the x and y axes and provide two histograms alongside the scatter plot. This way, the user will have greater intuition on the properties of the data.
 
-- **Bar chart:** We will create a function that takes 1-d data and create a bar chart of It using Altair. However, we will also provide summary statistics as well as plot them (e.g. mean and median lines) as overlaying lines.
+- **Histogram:** We will create a function that takes in a dataframe and column name and creates a histogram of it using ggplot2. However, we will also provide summary statistics overlayed on the as plot (e.g. mean and median vertical lines) and the sample standard deviation.
 
 
-- **Time series analysis:** We will create a function to decompose time series data and plot the components. The 4 plots are: raw data, estimated trend component, estimated seasonal/cyclic component and residual component.
+- **Time series analysis:** We will create a function that takes in time series data, decompose the data into trend, seasonal/cyclic and residual components and finally visualize the raw data and the decomposition results. The function returns a graph with 4 subplots, which contains raw data, estimated trend component, estimated seasonal/cyclic component and residual component.
 
 
 ### Dependencies
 
-- [Altair](https://altair-viz.github.io)
-- [Numpy](https://numpy.org)
+- [Altair (v3.3.0 or higher)](https://altair-viz.github.io)
+- [Numpy (v1.18.1 or higher)](https://numpy.org)
 
 ### Usage
 
