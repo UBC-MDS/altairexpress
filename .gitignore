@@ -34,7 +34,7 @@ MANIFEST
 *.spec
 
 # DS_Store
-*.DS_Store
+.DS_Store
 
 # Installer logs
 pip-log.txt
@@ -78,7 +78,8 @@ docs/_build/
 target/
 
 # Jupyter Notebook
-.ipynb_checkpoints
+*.ipynb_checkpoints
+*.ipynb
 
 # IPython
 profile_default/
@@ -140,3 +141,4 @@ dmypy.json
 **.Rproj.user*
 **.Rproj
 **.Rhistory
+.Rproj.user
