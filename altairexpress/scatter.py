@@ -30,7 +30,8 @@ def make_scatter(data,
     Returns
     -------
     altair.vegalite.v3.api.VConcatChart
-      Scatterplot of user-specified variables, along with associated histograms.
+      Scatterplot of user-specified variables,
+      along with associated histograms.
 
     Examples
     --------
