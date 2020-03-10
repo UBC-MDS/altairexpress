@@ -9,21 +9,35 @@ def make_scatter(data,
                  yval=None,
                  x_transform=False,
                  y_transform=False):
-    '''
+    """
     Takes in a dataframe and creates a scatterplot that compares two numerical
     features/variables that are specified by the user. Additionally, the user
     can toggle natural log transformations on both the x and y axis.
 
-    Arguements:
+    Parameters
+    ----------
+    data : pandas.core.frame.DataFrame
+       Input dataframe.
+    xval : str
+      Variable used to represent the x-axis.
+    yval : str
+      Variable used to represent the y-axis
+    x_logtransform : bool
+      Determines whether a log transformation occurs on the x-axis.
+    y_logtransform : bool
+      Determines whether a log transformation occurs on the x-axis.
 
-    data - (dataframe) Dataframe
-    xval - (String) variable/column name
-    yval - (String) variable/column name
-    x_logtransform - (Boolean) determines whether a natural log transformation
-     occurs on the x-axis
-    y_logtransform - (Boolean) determines whether a natural log transformation
-     occurs on the y-axis
-    '''
+    Returns
+    -------
+    altair.vegalite.v3.api.VConcatChart
+      Scatterplot of user-specified variables, along with associated histograms.
+
+    Examples
+    --------
+    >>> from altairexpress import scatter
+    >>> from vega_datasets import data
+    >>> make_scatter(data.cars(), xval = "Horsepower", yval = "Acceleration")
+    """
     # create a copy of the dataframe so that original dataframe
     #  remains unchanged
     df = data.copy(deep=True)
