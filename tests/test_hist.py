@@ -46,6 +46,6 @@ def test_hist():
     # check the annotation text
     assert plot_dict['layer'][1]['mark']['text'] == 'Mean is 59.47'
     assert plot_dict['layer'][2]['mark']['text'] == 'Median is ' \
-                                                               '60.71'
+        '60.71'
 
     return
