@@ -16,7 +16,9 @@ def hist(data, variable):
 
     Returns
     --------
-        altair plot Produces histogram with vertical bars for mean and median.
+    altair plot
+        Produces an altair histogram with vertical
+        bars for the mean and median.
 
     Examples
     --------
