@@ -35,14 +35,14 @@ def hist(data, variable):
     assert isinstance(variable, str), "TypeError: Variable must be supplied " \
                                       "as a string "
 
-    # Check that variable is continuous numeric data
-    assert pd.api.types.is_numeric_dtype(
-        data[variable]), "Variable needs to be numeric. Your data must be " \
-                         "have a continuous numeric data type. "
+    # # Check that variable is continuous numeric data
+    # assert pd.api.types.is_numeric_dtype(
+    #     data[variable]), "Variable needs to be numeric. Your data must be " \
+    #                      "have a continuous numeric data type. "
 
     # check that variable is contained in data
-    assert variable in data.columns, "NameError: Variable provided is not " \
-                                     "contained in data "
+    # assert variable in data.columns, "NameError: Variable provided is not " \
+    #                                  "contained in data "
 
     # extract the variable
     v = data[variable]
