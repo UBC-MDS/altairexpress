@@ -1,5 +1,5 @@
-import pytest
-import numpy as np
+# import pytest
+# import numpy as np
 from altairexpress import altairexpress as ae
 from gapminder import gapminder
 
@@ -9,11 +9,10 @@ gapminder
 
 def test_hist(gapminder):
     # make histogram of input variable
-    plot = hist(data=gapminder, variable='lifeExp')
+    plot = ae.hist(data=gapminder, variable='lifeExp')
 
     # convert  plot to dict object
     plot_dict = plot.to_dict()
-
 
     # ensure the layers have the expected marks
     assert plot_dict['layer'][0]['mark'] == 'bar'
@@ -29,13 +28,3 @@ def test_hist(gapminder):
     assert plot_dict['layer'][2]['encoding']['x']['aggregate'] == 'median'
 
     return
-
-
-
-
-
-
-
-
-
-
