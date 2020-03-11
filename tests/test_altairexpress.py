@@ -2,7 +2,7 @@ from altairexpress import altairexpress as ax
 import pytest
 # import pandas as pd
 # import numpy as np
-import altair as alt
+# import altair as alt
 
 
 def test_ts():

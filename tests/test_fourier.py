@@ -1,7 +1,7 @@
 from altairexpress import fourier_transform as ft
 import pandas as pd
 import numpy as np
-import altair as alt
+# import altair as alt
 
 
 def test_fourier():
@@ -44,7 +44,6 @@ def test_fourier():
     #                             time_col='X1',
     #                             data_col='X2') == "line", \
     #     "Return plot should be a line plot!"
-    
     # Test 3: check the data type of the x-axis mapping
     assert ft.fourier_transform(my_df1, 'X1', 'X2').to_dict()['encoding']['x'][
         'type'] == "quantitative", \
