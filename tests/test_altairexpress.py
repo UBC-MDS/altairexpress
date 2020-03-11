@@ -5,7 +5,6 @@ import pytest
 import altair as alt
 
 
-@pytest.fixture
 def test_ts():
     """
     Tests the time series function ts_alt to make sure the outputs are
@@ -16,11 +15,11 @@ def test_ts():
         The test should pass and no asserts should be displayed.
     """
     test_df1 = "https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-\
-        mod_students/master/labs/release/lab1/data/ts4_jjshares.csv?token=\
-            AAAAOMZQBS5IDU4Q6K3RBXS6NG7NM"
+mod_students/master/labs/release/lab1/data/ts4_jjshares.csv?token=\
+AAAAOMZQBS5IDU4Q6K3RBXS6NG7NM"
     test_df2 = "https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-\
-        mod_students/master/labs/release/lab1/data/ts1_globaltemp.csv?token=\
-            AAAAOM4GFOSICJVSVP2YUP26NG7QE"
+mod_students/master/labs/release/lab1/data/ts1_globaltemp.csv?token=\
+AAAAOM4GFOSICJVSVP2YUP26NG7QE"
     # test the plot type is correct
     assert isinstance(ax.ts_alt(test_df1, "earnings", 4),
                       alt.vegalite.v3.api.Chart), \
