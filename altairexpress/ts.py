@@ -29,7 +29,7 @@ def ts_alt(data, col, frequency):
     Examples
     --------
     >>> from altairexpress import ts
-    >>> ts_alt("extdata\example_data.csv", "earnings", 4)
+    >>> ts_alt("extdata/example_data.csv", "earnings", 4)
     """
     # Check the variable type of inputs
     assert isinstance(
