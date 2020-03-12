@@ -1,6 +1,6 @@
 ## altairexpress 
 
-![](https://github.com/aromatic-toast/altairexpress/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/aromatic-toast/altairexpress/branch/master/graph/badge.svg)](https://codecov.io/gh/aromatic-toast/altairexpress) ![Release](https://github.com/aromatic-toast/altairexpress/workflows/Release/badge.svg)
+![build](https://github.com/UBC-MDS/altairexpress/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/aromatic-toast/altairexpress/branch/master/graph/badge.svg)](https://codecov.io/gh/aromatic-toast/altairexpress) ![Release](https://github.com/UBC-MDS/altairexpress/workflows/Release/badge.svg)
 
 [![Documentation Status](https://readthedocs.org/projects/altairexpress/badge/?version=latest)](https://altairexpress.readthedocs.io/en/latest/?badge=latest)
 
