@@ -71,7 +71,7 @@ def ts_alt(data, col, frequency):
         trend = result.trend
         season = result.seasonal
         result_sum = pd.DataFrame({'date': df.iloc[:, 0],
-                                    'raw': df[col],
+                                'raw': df[col],
                                     'trend': trend,
                                     'season': season,
                                     'residual': res})
