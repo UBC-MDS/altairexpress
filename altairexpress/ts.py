@@ -71,10 +71,10 @@ def ts_alt(data, col, frequency):
         trend = result.trend
         season = result.seasonal
         result_sum = pd.DataFrame({'date': df.iloc[:, 0],
-                        'raw': df[col],
-                        'trend': trend,
-                        'season': season,
-                        'residual': res})
+                                'raw': df[col],
+                                'trend': trend,
+                                'season': season,
+                                'residual': res})
         res_df = pd.melt(result_sum, id_vars=[result_sum.columns[0]])
         if frequency == 4:
             x = str(res_df.columns[0]) + ":" + "O"
@@ -84,6 +84,6 @@ def ts_alt(data, col, frequency):
             alt.X(x),
             alt.Y("value:Q"),
             row=alt.Row('variable:N',
-                    sort=['raw', 'trend', 'season', 'residual'])
+                        sort=['raw', 'trend', 'season', 'residual'])
         ).properties(height=50, width=400)
     return plt
