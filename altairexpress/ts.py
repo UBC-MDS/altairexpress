@@ -30,8 +30,10 @@ def ts_alt(data, col, frequency):
     --------
     >>> from altairexpress import ts
     >>> import pandas as pd
-    >>> time = ["1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4", "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4"]
-    >>> earnings = [0.71, 0.63, 0.82, 0.91, 0.71, 0.63, 0.82, 0.91]
+    >>> time = ["1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4", 
+    >>> "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4"]
+    >>> earnings = [0.71, 0.63, 0.82, 0.91, 
+    >>> 0.71, 0.63, 0.82, 0.91]
     >>> ts_data = pd.DataFrame({"time" : time, "earnings" : earnings})
     >>> ts_alt(ts_data, "earnings", 4)
     """
@@ -67,10 +69,10 @@ def ts_alt(data, col, frequency):
         res = result.resid
         trend = result.trend
         season = result.seasonal
-        result_sum = pd.DataFrame({'date': df.iloc[:, 0], 
-                                'raw': df[col], 
-                                'trend': trend, 
-                                'season': season, 
+        result_sum = pd.DataFrame({'date': df.iloc[:, 0], \
+                                'raw': df[col], \
+                                'trend': trend, \
+                                'season': season, \
                                 'residual':res})
         res_df = pd.melt(result_sum, id_vars=[result_sum.columns[0]])
         if frequency == 4:
@@ -80,6 +82,7 @@ def ts_alt(data, col, frequency):
         plt = alt.Chart(res_df).mark_line().encode(
             alt.X(x),
             alt.Y("value:Q"),
-            row=alt.Row('variable:N', sort=['raw', 'trend', 'season', 'residual'])
+            row=alt.Row('variable:N', \
+                        sort=['raw', 'trend', 'season', 'residual'])
         ).properties(height=50, width=400)
     return plt
