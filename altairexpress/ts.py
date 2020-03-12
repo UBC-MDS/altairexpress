@@ -1,6 +1,5 @@
 import pandas as pd
 import altair as alt
-import numpy as np
 import statsmodels.tsa.seasonal as sea
 
 
@@ -31,7 +30,6 @@ def ts_alt(data, col, frequency):
     --------
     >>> from altairexpress import ts
     >>> ts_alt("extdata\example_data.csv", "earnings", 4)
-    altair.vegalite.v3.api.Chart
     """
     # Check the variable type of inputs
     assert isinstance(

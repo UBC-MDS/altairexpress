@@ -1,6 +1,5 @@
-from altairexpress import ts 
+from altairexpress import ts
 import pytest
-import pandas as pd
 import altair as alt
 
 
