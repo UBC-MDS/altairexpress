@@ -14,8 +14,8 @@ def test_ts():
     None
         The test should pass and no asserts should be displayed.
     """
-    time = ["1950 Q1", "1950 Q2", "1950 Q3", 
-            "1950 Q4", "1951 Q1", "1951 Q2", 
+    time = ["1950 Q1", "1950 Q2", "1950 Q3",
+            "1950 Q4", "1951 Q1", "1951 Q2",
             "1951 Q3", "1951 Q4"]
     earnings = [0.71, 0.63, 0.82, 0.91, 0.71, 0.63, 0.82, 0.91]
     ts_data = pd.DataFrame({'time': time, 'earnings': earnings})
