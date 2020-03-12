@@ -4,7 +4,6 @@ import altair as alt
 import pandas as pd
 
 
-@pytest.fixture
 def test_ts():
     """
     Tests the time series function ts_alt to make sure the outputs are
