@@ -65,19 +65,16 @@ def test_ts():
 
     with pytest.raises(Exception) as e:
         assert ts.ts_alt(ts_data, "earnings", "4")
-    assert str(
-        e.value) == "ValueError: Frequency must be an integer \
-        from {1, 4, 12, 52}."
+    assert str(e.value) == \
+        "ValueError: Frequency must be an integer from {1, 4, 12, 52}."
 
     with pytest.raises(Exception) as e:
         assert ts.ts_alt(ts_data, "earnings", 6)
-    assert str(
-        e.value) == "ValueError: Frequency must be an integer \
-        from {1, 4, 12, 52}."
+    assert str(e.value) == \
+        "ValueError: Frequency must be an integer from {1, 4, 12, 52}."
 
     with pytest.raises(Exception) as e:
         assert ts.ts_alt(ts_data, "earning", 4)
-    assert str(
-        e.value) == "ValueError: The column name were not found \
-        in the original data."
+    assert str(e.value) == \
+        "ValueError: The column name were not found in the original data."
     return
