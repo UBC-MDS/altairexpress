@@ -30,9 +30,9 @@ def ts_alt(data, col, frequency):
     --------
     >>> from altairexpress import ts
     >>> import pandas as pd
-    >>> time = ["1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4", 
+    >>> time = ["1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4",
     >>> "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4"]
-    >>> earnings = [0.71, 0.63, 0.82, 0.91, 
+    >>> earnings = [0.71, 0.63, 0.82, 0.91,
     >>> 0.71, 0.63, 0.82, 0.91]
     >>> ts_data = pd.DataFrame({"time" : time, "earnings" : earnings})
     >>> ts_alt(ts_data, "earnings", 4)
@@ -40,14 +40,15 @@ def ts_alt(data, col, frequency):
     # Check the variable type of inputs
     assert isinstance(
         data,
-        pd.DataFrame), "TypeError: The data must be in pandas.DataFrame format."
+        pd.DataFrame), \
+        "TypeError: The data must be in pandas.DataFrame format."
     assert isinstance(
         col,
         str), "TypeError: The column name must be entered as a string."
     if (frequency not in [1, 4, 12, 52]):
         raise Exception(
             "ValueError: Frequency must be an integer from {1, 4, 12, 52}.")
-    
+
     # create a copy of the dataframe so that original dataframe
     #  remains unchanged
     df = data.copy(deep=True)
@@ -69,11 +70,11 @@ def ts_alt(data, col, frequency):
         res = result.resid
         trend = result.trend
         season = result.seasonal
-        result_sum = pd.DataFrame({'date': df.iloc[:, 0], \
-                                'raw': df[col], \
-                                'trend': trend, \
-                                'season': season, \
-                                'residual':res})
+        result_sum = pd.DataFrame({'date': df.iloc[:, 0],
+                                    'raw': df[col],
+                                    'trend': trend,
+                                    'season': season,
+                                    'residual': res})
         res_df = pd.melt(result_sum, id_vars=[result_sum.columns[0]])
         if frequency == 4:
             x = str(res_df.columns[0]) + ":" + "O"

@@ -1,6 +1,7 @@
 from altairexpress import ts
 import pytest
 import altair as alt
+import pandas as pd
 
 
 @pytest.fixture
@@ -13,7 +14,9 @@ def test_ts():
     None
         The test should pass and no asserts should be displayed.
     """
-    time = ["1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4", "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4"]
+    time = ["1950 Q1", "1950 Q2", "1950 Q3", 
+            "1950 Q4", "1951 Q1", "1951 Q2", 
+            "1951 Q3", "1951 Q4"]
     earnings = [0.71, 0.63, 0.82, 0.91, 0.71, 0.63, 0.82, 0.91]
     ts_data = pd.DataFrame({'time': time, 'earnings': earnings})
     test_plot = ts.ts_alt(data=ts_data, col="earnings", frequency=4)
@@ -23,7 +26,7 @@ def test_ts():
     temp = [0.71, 0.63, 0.82, 0.91, 0.51, 1.31, 1.82, 2.01]
     ts_data2 = pd.DataFrame({'year': year, 'temp': temp})
     test_plot2 = ts.ts_alt(ts_data2, "temp", 1)
-    
+
     # test the plot type is correct
     assert isinstance(test_plot,
                       alt.vegalite.v3.api.Chart), \
