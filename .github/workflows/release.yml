@@ -47,6 +47,8 @@ jobs:
       if: always()
       with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
+          owner: UBC-MDS
+          repo: altairexpress
     - name: Bump version and tagging and publish
       run: |
         git config --local user.email "action@github.com"
