@@ -69,8 +69,6 @@ jobs:
       if: always()  # Force to always run this step to ensure "include administrators" is always turned back on
       with:
         access-token: ${{ secrets.ACCESS_TOKEN }}
-        owner: UBC-MDS
-        repo: altairexpress
     - name: Release tag
       run: |
         echo ::set-output name=release_tag::$(grep "version" */__init__.py | cut -d "'" -f 2 | cut -d '"' -f 2)
