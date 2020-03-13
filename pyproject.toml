@@ -1,9 +1,19 @@
+[tool.semantic_release]
+version_variable = "altairexpress/__init__.py:__version__"
+version_source = "commit"
+upload_to_pypi = "false"
+patch_without_tag = "true"
+
 [tool.poetry]
 name = "altairexpress"
-version = "0.1.0"
+version = "0.1.4"
 description = "Python package that creates basic EDA graphics in Altair with ease."
 authors = ["Lesley <iamthelm@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/UBC-MDS/altairexpress"
+repository = "https://github.com/UBC-MDS/altairexpress"
+documentation = 'https://altairexpress.readthedocs.io'
 
 [tool.poetry.dependencies]
 python = "^3.7"
@@ -20,6 +30,7 @@ pytest-cov = "^2.8.1"
 pytest = "^5.3.5"
 codecov = "^2.0.16"
 flake8 = "^3.7.9"
+python-semantic-release = "^4.10.0"
 
 [build-system]
 requires = ["poetry>=0.12"]

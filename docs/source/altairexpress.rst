@@ -20,6 +20,14 @@ altairexpress.hist module
    :undoc-members:
    :show-inheritance:
 
+altairexpress.hist module
+-------------------------
+
+.. automodule:: altairexpress.hist
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 altairexpress.scatter module
 ----------------------------
 
@@ -28,10 +36,10 @@ altairexpress.scatter module
    :undoc-members:
    :show-inheritance:
 
-altairexpress.ts\_alt module
-----------------------------
+altairexpress.ts module
+-----------------------
 
-.. automodule:: altairexpress.ts_alt
+.. automodule:: altairexpress.ts
    :members:
    :undoc-members:
    :show-inheritance:
