@@ -10,6 +10,10 @@ version = "0.1.0"
 description = "Python package that creates basic EDA graphics in Altair with ease."
 authors = ["Lesley <iamthelm@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/UBC-MDS/altairexpress"
+repository = "https://github.com/UBC-MDS/altairexpress"
+documentation = 'https://altairexpress.readthedocs.io'
 
 [tool.poetry.dependencies]
 python = "^3.7"
