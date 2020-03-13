@@ -29,7 +29,7 @@ def ts_alt(data, col, frequency):
 
     Examples
     --------
-    >>> from altairexpress import altairexpress
+    >>> from altairexpress.ts_alt import ts_alt
     >>> altairexpress.ts_alt("https://raw.githubusercontent.com/plotly/, \
         datasets/master/timeseries.csv", A, 3)
     altair.vegalite.v3.api.Chart
