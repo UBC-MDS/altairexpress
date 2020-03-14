@@ -4,18 +4,18 @@ altairexpress package
 Submodules
 ----------
 
-altairexpress.fourier\_transform module
----------------------------------------
+altairexpress.altairexpress module
+----------------------------------
 
-.. automodule:: altairexpress.fourier_transform
+.. automodule:: altairexpress.altairexpress
    :members:
    :undoc-members:
    :show-inheritance:
 
-altairexpress.hist module
--------------------------
+altairexpress.fourier\_transform module
+---------------------------------------
 
-.. automodule:: altairexpress.hist
+.. automodule:: altairexpress.fourier_transform
    :members:
    :undoc-members:
    :show-inheritance:
@@ -40,6 +40,14 @@ altairexpress.ts module
 -----------------------
 
 .. automodule:: altairexpress.ts
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+altairexpress.ts\_alt module
+----------------------------
+
+.. automodule:: altairexpress.ts_alt
    :members:
    :undoc-members:
    :show-inheritance:
