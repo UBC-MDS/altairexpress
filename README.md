@@ -47,6 +47,8 @@ pip install -i https://test.pypi.org/simple/altairexpress
 ### Documentation
 The official documentation is hosted on Read the Docs: <https://altairs.readthedocs.io/en/latest/?badge=latest>
 
+[Test PyPI Link](https://test.pypi.org/project/altairexpress/)
+
 ## Usage
 
 ```
