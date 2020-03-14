@@ -44,6 +44,14 @@ altairexpress.ts module
    :undoc-members:
    :show-inheritance:
 
+altairexpress.ts\_alt module
+----------------------------
+
+.. automodule:: altairexpress.ts_alt
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 
 Module contents
 ---------------

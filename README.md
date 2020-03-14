@@ -42,19 +42,80 @@ The official documentation is hosted on Read the Docs: <https://altairexpress.re
 
 ```
 from gapminder import gapminder
-from altairexpress import hist
+from altairexpress.hist import hist
+
 gapminder.head()
 altairexpress.hist(gapminder, gdpPerCap)
 ```
 
 ```
-from altairexpress import fourier_transform
-my_data = pd.DataFrame(data = {'time_series': [0, 1, 2, 3],
-                                       'signal': [2, 3, 4, 6]})
-altairexpress.fourier_transform(data = my_data,
-                                        time_col = 'time_series',
-                                        data_col = 'signal')
+from altairexpress.fourier_transform import fourier_transform
+
+my_data = pd.DataFrame(data = {'time_series':[0, 1, 2, 3],
+                                       'signal':[2, 3, 4, 6]})
+altairexpress.fourier_transform
+    .fourier_transfor(data = my_data,
+    time_col = 'time_series',
+    data_col = 'signal')
 ```
+
+# Package Walk-Through 
+When conducting Exploratory Data Analysis it is useful to plot the variables in the data to get an intial sense of the distribution and potential behaviour of the data. If the dataset contains many variables creating separate plots for each one could become tedious. This package automates the plot configuration process and generates basic graphics that summarize the data. 
+
+This package contains 4 functions; two for general purpose exploratory tasks and two that are more specific. 
+
+Creates a basic histogram that indicates the position of the mean and median and displays the standard deviation.
+
+- `gghist`
+
+Creates a scatterplot and calculates the correlation coefficient. 
+
+- `ggscatter`
+
+Creates a Fourier transform plot.
+
+- `fourier_transform`
+
+Converts time series data into 4 subplots displaying the raw data, trend, seasonal and noise components. 
+
+- `ts_plot`
+
+
+
+## To demo the pacakge functions, simply install the package and copy and paste these commands into jupyter lab to render the plots. 
+
+
+### Obtain a histogram and basic summary statistics with gghist()
+
+This plot displays the position of the mean and median of life expectancy from the gapminder dataset. In addition, the plot also displays the value of the mean, median and standard deviation. 
+```
+from gapminder import gapminder
+from altairexpress.hist import hist
+
+altairexpress.hist.hist(gapminder, "lifeExp")
+```
+This plot shows the distribution of gdp per capita. 
+
+```
+altairexpress.hist.hist(gapminder, "gdpPercap")
+```
+
+### Obtain a scatterplot with scatter_express()
+
+The `scatter_express()` returns a basic scatterplot but also returns the correlation coefficient between the two variables. 
+
+```
+from altairexpress.scatter import scatter
+from vega_datasets import data
+
+altairexpress.scatter.make_scatter(data.cars(),
+    xval = "Horsepower", 
+    yval = "Acceleration")
+```
+
+### Time Series with ts_plot()
+This function is able to take in a time stamped dataframe and convert it into a time series object. The time series is then decomposed into its trend, seasonsal and white noise components.
+
 
 ### Credits
 This package was created with Cookiecutter and the UBC-MDS/cookiecutter-ubc-mds project template, modified from the [pyOpenSci/cookiecutter-pyopensci](https://github.com/pyOpenSci/cookiecutter-pyopensci) project template and the [audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage).

@@ -35,7 +35,7 @@ def make_scatter(data,
 
     Examples
     --------
-    >>> from altairexpress import scatter
+    >>> from altairexpress.scatter import scatter
     >>> from vega_datasets import data
     >>> make_scatter(data.cars(), xval = "Horsepower", yval = "Acceleration")
     """

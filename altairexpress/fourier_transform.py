@@ -29,6 +29,7 @@ def fourier_transform(data, time_col, data_col):
 
     Examples
     --------
+    >>> from altairexpress.fourier_transform import fourier_transform
     >>> my_data = pd.DataFrame(data = {'time_series': [0, 1, 2, 3],
                                        'signal': [2, 3, 4, 6]})
     >>> altairexpress.fourier_transform(data = my_data,
