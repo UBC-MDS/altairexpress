@@ -11,6 +11,15 @@ Python package that creates basic EDA graphics in Altair with ease. It allows us
 ```
 pip install -i https://test.pypi.org/simple/altairexpress
 ```
+### Package Developers
+- Jack Tan
+
+- [Lesley Miller](https://github.com/aromatic-toast)
+
+- Tejas Phaterpekar
+
+- Wenjiao Zou
+
 
 ### Summary Overview
 -  This package simplifies the process of conducting Exploratory Data Analysis (EDA) on new datasets. It is designed to allow the user to explore the data graphically as well as obtain some basic summary statistics, all by writing only one line of code. Plots are produced using the `Altair` package under the hood. As Jenny Bryan once said: “Someone has to write for-loops, but it doesn’t have to be you!”. This sentiment has been implemented here for EDA analysis. The user is able to spend more time on analyzing the dataset and less time on configuring complex Altair plot settings.
