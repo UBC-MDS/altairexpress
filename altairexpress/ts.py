@@ -1,6 +1,6 @@
 import pandas as pd
 import altair as alt
-import statsmodels.tsa.seasonal as sea
+from statsmodels.tsa.seasonal import seasonal_decompose
 
 
 def ts_alt(data, col, frequency):
@@ -65,7 +65,7 @@ def ts_alt(data, col, frequency):
             alt.Y(col)
         ).properties(height=200, width=400)
     else:
-        result = sea.seasonal_decompose(
+        result = seasonal_decompose(
             df[col], model='additive', period=frequency)
         res = result.resid
         trend = result.trend
