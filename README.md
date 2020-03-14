@@ -16,7 +16,7 @@ pip install -i https://test.pypi.org/simple/altairexpress
 
 - [Lesley Miller](https://github.com/aromatic-toast)
 
-- Tejas Phaterpekar(https://github.com/tejasph)
+- [Tejas Phaterpekar](https://github.com/tejasph)
 
 - Wenjiao Zou
 
