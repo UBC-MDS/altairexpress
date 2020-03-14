@@ -59,6 +59,18 @@ altairexpress.fourier_transform
     data_col = 'signal')
 ```
 
+```
+from altairexpress import ts
+import pandas as pd
+time = ["1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4",
+"1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4"]
+earnings = [0.71, 0.63, 0.82, 0.91,
+0.71, 0.63, 0.82, 0.91]
+ts_data = pd.DataFrame({"time" : time, "earnings" : earnings})
+ts_alt(ts_data, "earnings", 4)
+```
+
+
 # Package Walk-Through 
 When conducting Exploratory Data Analysis it is useful to plot the variables in the data to get an intial sense of the distribution and potential behaviour of the data. If the dataset contains many variables creating separate plots for each one could become tedious. This package automates the plot configuration process and generates basic graphics that summarize the data. 
 
