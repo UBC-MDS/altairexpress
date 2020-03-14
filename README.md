@@ -2,7 +2,7 @@
 
 ![build](https://github.com/UBC-MDS/altairexpress/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/UBC-MDS/altairexpress/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/altairexpress) ![Release](https://github.com/UBC-MDS/altairexpress/workflows/Release/badge.svg)
 
-[![Documentation Status](https://readthedocs.org/projects/altairexpress/badge/?version=latest)](https://altairexpress.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/tsex/badge/?version=latest)](https://tsex.readthedocs.io/en/latest/?badge=latest)
 
 Python package that creates basic EDA graphics in Altair with ease. It allows users to quickly create plots to facilitate exploratory data analysis along with providing additional summary statistics about the data such as mean, median, and correlation.
 
