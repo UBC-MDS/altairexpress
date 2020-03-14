@@ -22,6 +22,7 @@ def hist(data, variable):
 
     Examples
     --------
+    >>> from altairexpress.hist import hist
     >>> from gapminder import gapminder
     >>> gapminder.head()
     >>> altairexpress.hist(gapminder, gdpPerCap)

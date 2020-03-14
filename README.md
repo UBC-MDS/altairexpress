@@ -2,7 +2,7 @@
 
 ![build](https://github.com/UBC-MDS/altairexpress/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/UBC-MDS/altairexpress/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/altairexpress) ![Release](https://github.com/UBC-MDS/altairexpress/workflows/Release/badge.svg)
 
-[![Documentation Status](https://readthedocs.org/projects/altairexpress/badge/?version=latest)](https://altairexpress.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/altairs/badge/?version=latest)](https://altairs.readthedocs.io/en/latest/?badge=latest)
 
 Python package that creates basic EDA graphics in Altair with ease. It allows users to quickly create plots to facilitate exploratory data analysis along with providing additional summary statistics about the data such as mean, median, and correlation.
 
@@ -13,7 +13,7 @@ pip install -i https://test.pypi.org/simple/altairexpress
 ```
 
 ### Summary Overview
--  This package simplifies the process of conducting Exploratory Data Analysis (EDA) on new datasets. It is designed to allow the user to explore the data graphically as well as obtain some basic summary statistics, all by writing only one line of code. Plots are produced using the `Altair` package under the hood. As Jenny Bryan once said: “Someone has to write for-loops, but it doesn’t have to be you!”. This sentiment has been implemented here for EDA analysis. The user is able to spend more time on analyzing the dataset and less time on configuring complex Altair plot settings. 
+-  This package simplifies the process of conducting Exploratory Data Analysis (EDA) on new datasets. It is designed to allow the user to explore the data graphically as well as obtain some basic summary statistics, all by writing only one line of code. Plots are produced using the `Altair` package under the hood. As Jenny Bryan once said: “Someone has to write for-loops, but it doesn’t have to be you!”. This sentiment has been implemented here for EDA analysis. The user is able to spend more time on analyzing the dataset and less time on configuring complex Altair plot settings.
 
 ### Features
 - **Fast Fourier transforms:** This function is missing from many summary functions and can be really useful for some cases. The user will be able to input time series data and the function will automatically implement frequency analysis and provide a frequency vs amplitude plot.
@@ -42,19 +42,80 @@ The official documentation is hosted on Read the Docs: <https://altairexpress.re
 
 ```
 from gapminder import gapminder
-from altairexpress import hist
+from altairexpress.hist import hist
+
 gapminder.head()
 altairexpress.hist(gapminder, gdpPerCap)
 ```
 
 ```
-from altairexpress import fourier_transform
-my_data = pd.DataFrame(data = {'time_series': [0, 1, 2, 3],
-                                       'signal': [2, 3, 4, 6]})
-altairexpress.fourier_transform(data = my_data,
-                                        time_col = 'time_series',
-                                        data_col = 'signal')
+from altairexpress.fourier_transform import fourier_transform
+
+my_data = pd.DataFrame(data = {'time_series':[0, 1, 2, 3],
+                                       'signal':[2, 3, 4, 6]})
+altairexpress.fourier_transform
+    .fourier_transfor(data = my_data,
+    time_col = 'time_series',
+    data_col = 'signal')
 ```
+
+# Package Walk-Through 
+When conducting Exploratory Data Analysis it is useful to plot the variables in the data to get an intial sense of the distribution and potential behaviour of the data. If the dataset contains many variables creating separate plots for each one could become tedious. This package automates the plot configuration process and generates basic graphics that summarize the data. 
+
+This package contains 4 functions; two for general purpose exploratory tasks and two that are more specific. 
+
+Creates a basic histogram that indicates the position of the mean and median and displays the standard deviation.
+
+- `gghist`
+
+Creates a scatterplot and calculates the correlation coefficient. 
+
+- `ggscatter`
+
+Creates a Fourier transform plot.
+
+- `fourier_transform`
+
+Converts time series data into 4 subplots displaying the raw data, trend, seasonal and noise components. 
+
+- `ts_plot`
+
+
+
+## To demo the pacakge functions, simply install the package and copy and paste these commands into jupyter lab to render the plots. 
+
+
+### Obtain a histogram and basic summary statistics with gghist()
+
+This plot displays the position of the mean and median of life expectancy from the gapminder dataset. In addition, the plot also displays the value of the mean, median and standard deviation. 
+```
+from gapminder import gapminder
+from altairexpress.hist import hist
+
+altairexpress.hist.hist(gapminder, "lifeExp")
+```
+This plot shows the distribution of gdp per capita. 
+
+```
+altairexpress.hist.hist(gapminder, "gdpPercap")
+```
+
+### Obtain a scatterplot with scatter_express()
+
+The `scatter_express()` returns a basic scatterplot but also returns the correlation coefficient between the two variables. 
+
+```
+from altairexpress.scatter import scatter
+from vega_datasets import data
+
+altairexpress.scatter.make_scatter(data.cars(),
+    xval = "Horsepower", 
+    yval = "Acceleration")
+```
+
+### Time Series with ts_plot()
+This function is able to take in a time stamped dataframe and convert it into a time series object. The time series is then decomposed into its trend, seasonsal and white noise components.
+
 
 ### Credits
 This package was created with Cookiecutter and the UBC-MDS/cookiecutter-ubc-mds project template, modified from the [pyOpenSci/cookiecutter-pyopensci](https://github.com/pyOpenSci/cookiecutter-pyopensci) project template and the [audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage).
