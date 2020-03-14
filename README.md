@@ -36,7 +36,7 @@ pip install -i https://test.pypi.org/simple/altairexpress
 - Although what our package does is by no means ‘new’ from a technical perspective (we are relying on already built packages to do everything), it does provide convenience to the user. There are many more universal summary packages out there, such as [pandas.DataFrame.describe()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html) for python and [summary](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/summary) for R), our package is able to combine both analysis and visual representation of the data for specific (FFT) and general (bar chart) tasks.
 
 ### Documentation
-The official documentation is hosted on Read the Docs: <https://altairexpress.readthedocs.io/en/latest/>
+The official documentation is hosted on Read the Docs: <https://altairs.readthedocs.io/en/latest/?badge=latest>
 
 ## Usage
 
