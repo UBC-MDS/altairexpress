@@ -22,9 +22,9 @@ def make_scatter(data,
       Variable used to represent the x-axis.
     yval : str
       Variable used to represent the y-axis
-    x_logtransform : bool
+    x_transform : bool
       Determines whether a log transformation occurs on the x-axis.
-    y_logtransform : bool
+    y_transform : bool
       Determines whether a log transformation occurs on the x-axis.
 
     Returns
