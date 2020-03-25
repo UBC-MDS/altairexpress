@@ -55,12 +55,14 @@ The official documentation is hosted on Read the Docs: <https://altairs.readthed
 from gapminder import gapminder
 from altairexpress.hist import hist
 
+# "gdpPerCap" is a column in the gapminder dataset
 gapminder.head()
-altairexpress.hist(gapminder, gdpPerCap)
+altairexpress.hist(gapminder, "gdpPerCap")
 ```
 
 ```
 from altairexpress import fourier_transform
+import pandas as pd
 
 my_data = pd.DataFrame(data = {'time_series':[0, 1, 2, 3],
                                        'signal':[2, 3, 4, 6]})
