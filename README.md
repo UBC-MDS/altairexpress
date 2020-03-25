@@ -1,4 +1,4 @@
-## altairexpress 
+## altairexpress   
 
 ![build](https://github.com/UBC-MDS/altairexpress/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/UBC-MDS/altairexpress/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/altairexpress) ![Release](https://github.com/UBC-MDS/altairexpress/workflows/Release/badge.svg)
 
@@ -11,6 +11,15 @@ Python package that creates basic EDA graphics in Altair with ease. It allows us
 ```
 pip install -i https://test.pypi.org/simple/altairexpress
 ```
+### Package Developers
+- Jack Tan
+
+- [Lesley Miller](https://github.com/aromatic-toast)
+
+- [Tejas Phaterpekar](https://github.com/tejasph)
+
+- Wenjiao Zou
+
 
 ### Summary Overview
 -  This package simplifies the process of conducting Exploratory Data Analysis (EDA) on new datasets. It is designed to allow the user to explore the data graphically as well as obtain some basic summary statistics, all by writing only one line of code. Plots are produced using the `Altair` package under the hood. As Jenny Bryan once said: “Someone has to write for-loops, but it doesn’t have to be you!”. This sentiment has been implemented here for EDA analysis. The user is able to spend more time on analyzing the dataset and less time on configuring complex Altair plot settings.
@@ -38,23 +47,27 @@ pip install -i https://test.pypi.org/simple/altairexpress
 ### Documentation
 The official documentation is hosted on Read the Docs: <https://altairs.readthedocs.io/en/latest/?badge=latest>
 
+[Test PyPI Link](https://test.pypi.org/project/altairexpress/)
+
 ## Usage
 
 ```
 from gapminder import gapminder
 from altairexpress.hist import hist
 
+# "gdpPerCap" is a column in the gapminder dataset
 gapminder.head()
-altairexpress.hist(gapminder, gdpPerCap)
+altairexpress.hist(gapminder, "gdpPerCap")
 ```
 
 ```
-from altairexpress.fourier_transform import fourier_transform
+from altairexpress import fourier_transform
+import pandas as pd
 
 my_data = pd.DataFrame(data = {'time_series':[0, 1, 2, 3],
                                        'signal':[2, 3, 4, 6]})
-altairexpress.fourier_transform
-    .fourier_transfor(data = my_data,
+
+fourier_transform(data = my_data,
     time_col = 'time_series',
     data_col = 'signal')
 ```
@@ -102,14 +115,14 @@ Converts time series data into 4 subplots displaying the raw data, trend, season
 This plot displays the position of the mean and median of life expectancy from the gapminder dataset. In addition, the plot also displays the value of the mean, median and standard deviation. 
 ```
 from gapminder import gapminder
-from altairexpress.hist import hist
+from altairexpress import hist
 
-altairexpress.hist.hist(gapminder, "lifeExp")
+hist(gapminder, "lifeExp")
 ```
 This plot shows the distribution of gdp per capita. 
 
 ```
-altairexpress.hist.hist(gapminder, "gdpPercap")
+hist(gapminder, "gdpPercap")
 ```
 
 ### Obtain a scatterplot with scatter_express()
@@ -117,10 +130,10 @@ altairexpress.hist.hist(gapminder, "gdpPercap")
 The `scatter_express()` returns a basic scatterplot but also returns the correlation coefficient between the two variables. 
 
 ```
-from altairexpress.scatter import scatter
+from altairexpress.scatter import make_scatter
 from vega_datasets import data
 
-altairexpress.scatter.make_scatter(data.cars(),
+make_scatter(data.cars(),
     xval = "Horsepower", 
     yval = "Acceleration")
 ```

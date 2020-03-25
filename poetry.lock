@@ -127,6 +127,14 @@ version = "5.0.3"
 toml = ["toml"]
 
 [[package]]
+category = "main"
+description = "collection of simple datetime convenience functions"
+name = "datetools"
+optional = false
+python-versions = "*"
+version = "1.1"
+
+[[package]]
 category = "dev"
 description = "Docutils -- Python Documentation Utilities"
 name = "docutils"
@@ -870,7 +878,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "4415a090ad0fd62711261c0be925e9a7668ccbb7e605d1cc803c7fcbffbf7037"
+content-hash = "ba46b0db8369d4dfbf7265a8576a888e5b9abc70d8956a40666943d0482e51ef"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -950,6 +958,9 @@ coverage = [
     {file = "coverage-5.0.3-cp39-cp39m-win32.whl", hash = "sha256:b63dd43f455ba878e5e9f80ba4f748c0a2156dde6e0e6e690310e24d6e8caf40"},
     {file = "coverage-5.0.3-cp39-cp39m-win_amd64.whl", hash = "sha256:da93027835164b8223e8e5af2cf902a4c80ed93cb0909417234f4a9df3bcd9af"},
     {file = "coverage-5.0.3.tar.gz", hash = "sha256:77afca04240c40450c331fa796b3eab6f1e15c5ecf8bf2b8bee9706cd5452fef"},
+]
+datetools = [
+    {file = "DateTools-1.1.tar.gz", hash = "sha256:902abfc1083f62a5ccbf577dd30722c4177c2614cbe194eed0356574ea76397d"},
 ]
 docutils = [
     {file = "docutils-0.16-py2.py3-none-any.whl", hash = "sha256:0c5b78adfbf7762415433f5515cd5c9e762339e23369dbe8000d84a4bf4ab3af"},
