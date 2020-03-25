@@ -113,14 +113,14 @@ Converts time series data into 4 subplots displaying the raw data, trend, season
 This plot displays the position of the mean and median of life expectancy from the gapminder dataset. In addition, the plot also displays the value of the mean, median and standard deviation. 
 ```
 from gapminder import gapminder
-from altairexpress.hist import hist
+from altairexpress import hist
 
-altairexpress.hist.hist(gapminder, "lifeExp")
+hist(gapminder, "lifeExp")
 ```
 This plot shows the distribution of gdp per capita. 
 
 ```
-altairexpress.hist.hist(gapminder, "gdpPercap")
+hist(gapminder, "gdpPercap")
 ```
 
 ### Obtain a scatterplot with scatter_express()
@@ -128,10 +128,10 @@ altairexpress.hist.hist(gapminder, "gdpPercap")
 The `scatter_express()` returns a basic scatterplot but also returns the correlation coefficient between the two variables. 
 
 ```
-from altairexpress.scatter import scatter
+from altairexpress.scatter import make_scatter
 from vega_datasets import data
 
-altairexpress.scatter.make_scatter(data.cars(),
+make_scatter(data.cars(),
     xval = "Horsepower", 
     yval = "Acceleration")
 ```
