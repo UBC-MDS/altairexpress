@@ -21,7 +21,7 @@ pip install -i https://test.pypi.org/simple/ altairexpress
 
 - [Tejas Phaterpekar](https://github.com/tejasph)
 
-- Wenjiao Zou
+- [Wenjiao Zou](https://github.com/zouwenjiao)
 
 
 ### Summary Overview
