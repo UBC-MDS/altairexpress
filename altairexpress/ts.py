@@ -28,7 +28,7 @@ def ts_alt(data, col, frequency):
 
     Examples
     --------
-    >>> from altairexpress import ts
+    >>> from altairexpress.ts import ts_alt
     >>> import pandas as pd
     >>> time = ["1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4",
     >>> "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4"]
