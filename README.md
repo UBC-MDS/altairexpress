@@ -128,6 +128,7 @@ The plow below displays a simple fourier transform with some simple sample data.
 
 ```
 from altairexpress.fourier_transform import fourier_transform
+import pandas as pd
 my_data = pd.DataFrame(data = {'time_series':0,1,2,3],'signal': [2,3,4,6]})
 
 fourier_transform(data=my_data, time_col='time_series',data_col='signal')
