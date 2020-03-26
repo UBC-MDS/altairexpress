@@ -9,7 +9,7 @@ Python package that creates basic EDA graphics in Altair with ease. It allows us
 ### Installation:
 
 ```
-pip install -i https://test.pypi.org/simple/ altairexpress
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple altairexpress
 ```
 
 [Link to Test PyPI](https://test.pypi.org/project/altairexpress/)
