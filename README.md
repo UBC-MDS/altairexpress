@@ -36,9 +36,9 @@ pip install -i https://test.pypi.org/simple/altairexpress
 
 
 ### Dependencies
-
-- [Altair (v3.3.0 or higher)](https://altair-viz.github.io)
-- [Numpy (v1.18.1 or higher)](https://numpy.org)
+- [Pandas > v3.7](https://pandas.pydata.org/)
+- [Altair > v3.3.0](https://altair-viz.github.io)
+- [Numpy > v1.18.1)](https://numpy.org)
 
 ### How the package fits into the Python ecosytem
 
@@ -48,40 +48,6 @@ pip install -i https://test.pypi.org/simple/altairexpress
 The official documentation is hosted on Read the Docs: <https://altairs.readthedocs.io/en/latest/?badge=latest>
 
 [Test PyPI Link](https://test.pypi.org/project/altairexpress/)
-
-## Usage
-
-```
-from gapminder import gapminder
-from altairexpress.hist import hist
-
-# "gdpPerCap" is a column in the gapminder dataset
-gapminder.head()
-altairexpress.hist(gapminder, "gdpPerCap")
-```
-
-```
-from altairexpress import fourier_transform
-import pandas as pd
-
-my_data = pd.DataFrame(data = {'time_series':[0, 1, 2, 3],
-                                       'signal':[2, 3, 4, 6]})
-
-fourier_transform(data = my_data,
-    time_col = 'time_series',
-    data_col = 'signal')
-```
-
-```
-from altairexpress import ts
-import pandas as pd
-time = ["1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4",
-"1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4"]
-earnings = [0.71, 0.63, 0.82, 0.91,
-0.71, 0.63, 0.82, 0.91]
-ts_data = pd.DataFrame({"time" : time, "earnings" : earnings})
-ts_alt(ts_data, "earnings", 4)
-```
 
 
 # Package Walk-Through 
@@ -110,24 +76,20 @@ Converts time series data into 4 subplots displaying the raw data, trend, season
 ## To demo the pacakge functions, simply install the package and copy and paste these commands into jupyter lab to render the plots. 
 
 
-### Obtain a histogram and basic summary statistics with gghist()
+### **Obtain a histogram and basic summary statistics with gghist()**
 
 This plot displays the position of the mean and median of life expectancy from the gapminder dataset. In addition, the plot also displays the value of the mean, median and standard deviation. 
 ```
 from gapminder import gapminder
-from altairexpress import hist
+from altairexpress.hist import hist
 
 hist(gapminder, "lifeExp")
 ```
-This plot shows the distribution of gdp per capita. 
+<img src="img/hist_lifeExp.png" width="70%"/>
 
-```
-hist(gapminder, "gdpPercap")
-```
+### **Obtain a scatterplot with make_scatter()**
 
-### Obtain a scatterplot with scatter_express()
-
-The `scatter_express()` returns a basic scatterplot but also returns the correlation coefficient between the two variables. 
+The `make_scatter()` returns a basic scatterplot but also returns the correlation coefficient between the Horsepower and Acceleration of cars. 
 
 ```
 from altairexpress.scatter import make_scatter
@@ -137,12 +99,13 @@ make_scatter(data.cars(),
     xval = "Horsepower", 
     yval = "Acceleration")
 ```
+<img src="img/scatter.png" width="70%"/>
 
-### Time Series with ts_plot()
+### Time Series Decomposition with ts_plot()
 This function is able to take in a time stamped dataframe and convert it into a time series object. The time series is then decomposed into its trend, seasonsal and white noise components.
 
 ```
-from altairexpress import ts
+from altairexpress.ts import ts
 import pandas as pd
 time = ["1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4",
 "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4"]
@@ -151,7 +114,18 @@ earnings = [0.71, 0.63, 0.82, 0.91,
 ts_data = pd.DataFrame({"time" : time, "earnings" : earnings})
 ts_alt(ts_data, "earnings", 4)
 ```
+<img src="img/time_series.png" width="70%"/>
 
+### Fourier Transform with fourier_transform()
+The plow below displays a simple fourier transform with some simple sample data. 
+
+```
+from altairexpress.fourier_transform import fourier_transform
+my_data = pd.DataFrame(data = {'time_series':0,1,2,3],'signal': [2,3,4,6]})
+
+fourier_transform(data=my_data, time_col='time_series',data_col='signal')
+```
+<img src="img/fourier_transform.png" width="70%"/>
 
 ### Credits
 This package was created with Cookiecutter and the UBC-MDS/cookiecutter-ubc-mds project template, modified from the [pyOpenSci/cookiecutter-pyopensci](https://github.com/pyOpenSci/cookiecutter-pyopensci) project template and the [audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage).
