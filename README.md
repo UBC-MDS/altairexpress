@@ -107,7 +107,7 @@ make_scatter(data.cars(),
 This function is able to take in a time stamped dataframe and convert it into a time series object. The time series is then decomposed into its trend, seasonsal and white noise components.
 
 ```
-from altairexpress.ts import ts
+from altairexpress.ts import ts_alt
 import pandas as pd
 time = ["1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4",
 "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4"]
