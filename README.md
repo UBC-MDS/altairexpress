@@ -11,6 +11,9 @@ Python package that creates basic EDA graphics in Altair with ease. It allows us
 ```
 pip install -i https://test.pypi.org/simple/ altairexpress
 ```
+
+[Link to Test PyPI](https://test.pypi.org/project/altairexpress/)
+
 ### Package Developers
 - Jack Tan
 
@@ -38,16 +41,15 @@ pip install -i https://test.pypi.org/simple/ altairexpress
 ### Dependencies
 - [Pandas > v3.7](https://pandas.pydata.org/)
 - [Altair > v3.3.0](https://altair-viz.github.io)
-- [Numpy > v1.18.1)](https://numpy.org)
+- [Numpy > v1.18.1](https://numpy.org)
 
 ### How the package fits into the Python ecosytem
 
 - Although what our package does is by no means ‘new’ from a technical perspective (we are relying on already built packages to do everything), it does provide convenience to the user. There are many more universal summary packages out there, such as [pandas.DataFrame.describe()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html) for python and [summary](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/summary) for R), our package is able to combine both analysis and visual representation of the data for specific (FFT) and general (bar chart) tasks.
 
 ### Documentation
-The official documentation is hosted on Read the Docs: <https://altairs.readthedocs.io/en/latest/?badge=latest>
+The official documentation is hosted on [Read the Docs](https://altairs.readthedocs.io/en/latest/?badge=latest).
 
-[Test PyPI Link](https://test.pypi.org/project/altairexpress/)
 
 
 # Package Walk-Through 
@@ -57,11 +59,11 @@ This package contains 4 functions; two for general purpose exploratory tasks and
 
 Creates a basic histogram that indicates the position of the mean and median and displays the standard deviation.
 
-- `gghist`
+- `hist`
 
 Creates a scatterplot and calculates the correlation coefficient. 
 
-- `ggscatter`
+- `make_scatter`
 
 Creates a Fourier transform plot.
 
@@ -69,7 +71,7 @@ Creates a Fourier transform plot.
 
 Converts time series data into 4 subplots displaying the raw data, trend, seasonal and noise components. 
 
-- `ts_plot`
+- `ts_alt`
 
 
 
@@ -101,7 +103,7 @@ make_scatter(data.cars(),
 ```
 <img src="img/scatter.png" width="70%"/>
 
-### Time Series Decomposition with ts_plot()
+### Time Series Decomposition with ts_alt()
 This function is able to take in a time stamped dataframe and convert it into a time series object. The time series is then decomposed into its trend, seasonsal and white noise components.
 
 ```
@@ -116,7 +118,7 @@ ts_alt(ts_data, "earnings", 4)
 ```
 <img src="img/time_series.png" width="70%"/>
 
-### Fourier Transform with fourier_transform()
+### Fourier Transform plot with fourier_transform()
 The plow below displays a simple fourier transform with some simple sample data. 
 
 ```
