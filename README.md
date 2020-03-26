@@ -78,7 +78,7 @@ Converts time series data into 4 subplots displaying the raw data, trend, season
 ## To demo the pacakge functions, simply install the package and copy and paste these commands into jupyter lab to render the plots. 
 
 
-### **Obtain a histogram and basic summary statistics with gghist()**
+### **Obtain a histogram and basic summary statistics with gghist**
 
 This plot displays the position of the mean and median of life expectancy from the gapminder dataset. In addition, the plot also displays the value of the mean, median and standard deviation. 
 ```
@@ -89,9 +89,9 @@ hist(gapminder, "lifeExp")
 ```
 <img src="img/hist_lifeExp.png" width="70%"/>
 
-### **Obtain a scatterplot with make_scatter()**
+### **Obtain a scatterplot with make_scatter**
 
-The `make_scatter()` returns a basic scatterplot but also returns the correlation coefficient between the Horsepower and Acceleration of cars. 
+The `make_scatter` function returns a basic scatterplot but also displays the distribution of each variable on the x and y-axes as histograms.
 
 ```
 from altairexpress.scatter import make_scatter
@@ -103,7 +103,7 @@ make_scatter(data.cars(),
 ```
 <img src="img/scatter.png" width="70%"/>
 
-### Time Series Decomposition with ts_alt()
+### Time Series Decomposition with ts_alt
 This function is able to take in a time stamped dataframe and convert it into a time series object. The time series is then decomposed into its trend, seasonsal and white noise components.
 
 ```
@@ -118,7 +118,7 @@ ts_alt(ts_data, "earnings", 4)
 ```
 <img src="img/time_series.png" width="70%"/>
 
-### Fourier Transform plot with fourier_transform()
+### Fourier Transform plot with fourier_transform
 The plow below displays a simple fourier transform with some simple sample data. 
 
 ```
