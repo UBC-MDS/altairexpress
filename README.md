@@ -39,9 +39,14 @@ pip install -i https://test.pypi.org/simple/ altairexpress
 
 
 ### Dependencies
-- [Pandas > v3.7](https://pandas.pydata.org/)
-- [Altair > v3.3.0](https://altair-viz.github.io)
+- [Python > 3.7](https://www.python.org/downloads/release/python-370/)
+- [Pandas > v1.0.1](https://pandas.pydata.org/)
+- [Altair > v4.0.1](https://altair-viz.github.io)
 - [Numpy > v1.18.1](https://numpy.org)
+- [vega-datasets > 0.8.0](https://pypi.org/project/vega-datasets/)
+- [gapminder > 0.1](https://pypi.org/project/gapminder/)
+- [statsmodel > 0.11.1](https://www.statsmodels.org/stable/install.html)
+- [datetools > 1.1](https://pythonhosted.org/DateTools/introduction.html)
 
 ### How the package fits into the Python ecosytem
 
