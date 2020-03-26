@@ -15,7 +15,7 @@ pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://
 [Link to Test PyPI](https://test.pypi.org/project/altairexpress/)
 
 ### Package Developers
-- Jack Tan
+- [Jack Tan](https://github.com/thejacktan)
 
 - [Lesley Miller](https://github.com/aromatic-toast)
 
