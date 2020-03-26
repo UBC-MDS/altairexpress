@@ -25,7 +25,7 @@ def hist(data, variable):
     >>> from altairexpress.hist import hist
     >>> from gapminder import gapminder
     >>> gapminder.head()
-    >>> altairexpress.hist(gapminder, gdpPerCap)
+    >>> hist(gapminder, 'lifeExp')
     """
 
     # Check if data is dataframe
