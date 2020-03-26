@@ -23,6 +23,7 @@ vega_datasets = "^0.8.0"
 gapminder = "^0.1"
 statsmodels = "^0.11.1"
 datetools = "^1.1"
+vega-datasets = "^0.8.0"
 
 [tool.poetry.dev-dependencies]
 sphinx = "^2.4.3"
