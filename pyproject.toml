@@ -6,7 +6,7 @@ patch_without_tag = "true"
 
 [tool.poetry]
 name = "altairexpress"
-version = "1.1.18"
+version = "1.1.19"
 description = "Python package that creates basic EDA graphics in Altair with ease."
 authors = ["Lesley <iamthelm@gmail.com>"]
 license = "MIT"
